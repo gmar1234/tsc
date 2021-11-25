@@ -1,0 +1,20 @@
+.button {
+  font-size: 14px;
+  cursor: pointer;
+  &--primary {
+    background: $color-primary;
+    border: none;
+    border-radius: 8px;
+    color: #ffffff;
+    height: 56px;
+    width: 192px;
+    transition: $transition;
+    &:hover {
+      background: darken($color-primary, 5%);
+    }
+  }
+
+  @include respond(phone) {
+    width: 100%;
+  }
+}

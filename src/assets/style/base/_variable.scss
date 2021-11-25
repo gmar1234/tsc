@@ -1,0 +1,11 @@
+$color-primary: #2c84eb;
+$color-secondary: lighten($color-primary, 35%);
+$color-accent: #d6dbed;
+$color-text: #353f53;
+$color-bg: #f4f6fc;
+$color-border: #d6dbed;
+$color-white: #ffffff;
+
+$shadowBottom: 0px -3px 2px 3px rgba(0, 0, 0, 0.3);
+$shadowTop: -3px 9px 7px 4px rgba(0, 0, 0, 0.3);
+$transition: all 0.5s ease;
