@@ -1,7 +1,9 @@
 import React from "react";
 import "./assets/style/style.scss";
-import Img from "./assets/img/base.svg";
+import Smoke from "./assets/img/smoke.png";
 import PoliticsComponent from "./components/PoliticsComponent";
+import { MdSecurity,MdPhoneIphone,MdOutlineMoney,MdOutlineLocalHospital } from "react-icons/md";
+
 function App() {
   return (
     <div className="login">
@@ -13,18 +15,20 @@ function App() {
             Seguro de <br />
             <span className="font-bold">Salud</span>
           </h2>
-          <div className="">
+          <div className="login__list">
             <ul>
-              <li> Cómpralo de manera facil y rápida</li>
-              <li> Cotiza y compra tu seguro 100% digital</li>
-              <li> Hasta S/. 12 millones de cobertura anual</li>
-              <li> Más de 300 clínicas en todo el Perú</li>
+              <li> <MdSecurity /> Cómpralo de manera facil y rápida</li>
+              <li> <MdPhoneIphone /> Cotiza y compra tu seguro 100% digital</li>
+              <li> <MdOutlineMoney /> Hasta S/. 12 millones de cobertura anual</li>
+              <li> <MdOutlineLocalHospital />Más de 300 clínicas en todo el Perú</li>
             </ul>
           </div>
         </div>
-        <p className="tag tag--water color-gray font-12">
+        <p className="login__footer">
           &copy; 2021 RIMAC y Company
         </p>
+
+        <img  src={Smoke} className="login__smoke" alt="Smoke Cotización" />
       </div>
 
       <div className="login__data">
@@ -46,12 +50,16 @@ function App() {
                 placeholder="Nro. de doc"
               />
             </div>
-
+            <div className="form__group1">
             <input
               className="input"
               name="phone"
               placeholder="Fecha de nacimiento"
             />
+              <label>Fecha de nacimiento</label>
+            </div>
+
+        
             <input className="input" name="license" placeholder="Celular" />
 
             <PoliticsComponent text="Politica de Protección de Datos Personales y los Términos y Condiciones." />
