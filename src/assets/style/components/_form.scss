@@ -1,6 +1,19 @@
 .form {
   display: grid;
-  grid-gap: 16px;
+  grid-gap: 8px;
+  width: 50%;
+  margin: 0 auto;
+  &__top {
+    font-size: rem(13px);
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    span,
+    svg {
+      color: $color-primary;
+      margin-right: 5px;
+    }
+  }
   &__header {
     margin-bottom: 15px;
     .title {
@@ -15,6 +28,12 @@
       font-size: rem(17px);
       font-weight: 100;
     }
+  }
+
+  &__call {
+    margin-top: 40px;
+    margin-bottom: -12px;
+    font-size: rem(14px);
   }
   &__group {
     display: flex;
@@ -33,66 +52,6 @@
       flex: 1;
       border-radius: 0 4px 4px 0;
       border-left: none;
-    }
-  }
-
-  &__group1 {
-    display: flex;
-    flex-flow: column-reverse;
-    margin-bottom: 1em;
-    label,
-    input {
-      transition: all 0.2s;
-      touch-action: manipulation;
-    }
-
-    input {
-      font-size: 1.5em;
-      border: 0;
-      border-bottom: 1px solid #ccc;
-      font-family: inherit;
-      -webkit-appearance: none;
-      border-radius: 0;
-      padding: 0;
-      cursor: text;
-    }
-
-    input:focus {
-      outline: 0;
-      border-bottom: 1px solid #666;
-    }
-
-    label {
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    input:placeholder-shown + label {
-      cursor: text;
-      max-width: 66.66%;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      transform-origin: left bottom;
-      // transform: translate(0, 2.125rem) scale(1.5);
-      transform: translate(15px, 38px) scale(1.5);
-    }
-    // https://codepen.io/team/css-tricks/pen/XVBLRM
-    ::-webkit-input-placeholder {
-      opacity: 0;
-      transition: inherit;
-    }
-
-    input {
-      &:focus::-webkit-input-placeholder {
-        opacity: 1;
-      }
-
-      &:not(:placeholder-shown) + label,
-      &:focus + label {
-        transform: translate(15px, 16px) scale(1);
-        cursor: pointer;
-      }
     }
   }
 

@@ -1,0 +1,10 @@
+.tag {
+  width: fit-content;
+  padding: 5px;
+  border-radius: 15px;
+  text-transform: uppercase;
+  &--green {
+    background-color: $color-green;
+    color: $color-white;
+  }
+}

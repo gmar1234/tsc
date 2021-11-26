@@ -1,0 +1,43 @@
+.gm-container {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  overflow-x: hidden;
+
+  &--two {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &__left {
+    opacity: 0;
+    animation: 1.3s 0.2s ease fadeInLeft;
+    animation-fill-mode: forwards;
+    transform: translateX(100%);
+    @include respond(phone) {
+      display: none;
+    }
+  }
+
+  &__rigth {
+    opacity: 0;
+    animation: 1.3s 0.2s ease fadeInRight;
+    animation-fill-mode: forwards;
+    transform: translateX(100%);
+    position: relative;
+    overflow-y: auto;
+    padding: rem(100px) 0;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+  }
+
+  @include respond(tab-land) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @include respond(tab-port) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @include respond(phone) {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,20 +1,5 @@
 .login {
-  width: 100%;
-  height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  @include respond(tab-land) {
-    grid-template-columns: 1fr 1fr;
-  }
-  @include respond(tab-port) {
-    grid-template-columns: 1fr 1fr;
-  }
-  @include respond(phone) {
-    grid-template-columns: 1fr;
-  }
-
   &__banner {
-    // background-image: url(../../img/bg.png);
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
@@ -78,12 +63,6 @@
     color: white !important;
   }
 
-  &__data {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
   &__body {
     width: 288px;
   }

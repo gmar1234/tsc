@@ -1,15 +1,52 @@
-.input {
-  font-family: Lato;
-  background: #ffffff;
-  color: #494f66;
-  height: 56px;
-  border-radius: 4.02778px;
-  border: 1.00694px solid $color-border;
-  padding: 16px;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: normal;
-  &::placeholder {
-    color: $color-border;
+.gm-input {
+  display: flex;
+  flex-flow: column-reverse;
+  flex: 1;
+  label {
+    @include props-input-label;
+    letter-spacing: 0.05em;
+    color: $color-text-ligth;
   }
+
+  input:placeholder-shown + label {
+    cursor: text;
+    max-width: 66.66%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transform-origin: left bottom;
+    transform: translate(15px, 38px) scale(1.5);
+  }
+
+  input {
+    @include props-input-label;
+    @include props-input-select;
+    &::-webkit-input-placeholder {
+      opacity: 0;
+      transition: inherit;
+    }
+    &:focus {
+      outline: 0;
+      border-bottom: 1px solid $color-border;
+    }
+    &::placeholder {
+      color: $color-border;
+    }
+
+    &:focus::-webkit-input-placeholder {
+      opacity: 1;
+    }
+
+    &:not(:placeholder-shown) + label,
+    &:focus + label {
+      transform: translate(15px, 16px) scale(1);
+      cursor: pointer;
+    }
+  }
+}
+
+select {
+  @include props-input-select;
+  font-weight: normal;
+  margin-top: 13px;
 }

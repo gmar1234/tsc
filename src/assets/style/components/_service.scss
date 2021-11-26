@@ -1,0 +1,14 @@
+.gm-services {
+  &__title {
+    margin-bottom: 20px;
+    h2 {
+      font-size: 15px;
+      color: $color-text-dark;
+      font-weight: 100;
+    }
+    p {
+      font-size: 13px;
+      color: $color-primary;
+    }
+  }
+}

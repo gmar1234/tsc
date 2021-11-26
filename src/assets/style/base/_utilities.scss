@@ -5,3 +5,38 @@
 .font-bold {
   font-weight: bold;
 }
+
+.center-element-all {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.end-element-all {
+  display: flex;
+  justify-content: end;
+}
+
+.between-elemet-all {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@for $i from 1 through 100 {
+  .ml-#{$i} {
+    margin-left: #{$i + "px"};
+  }
+  .mr-#{$i} {
+    margin-right: #{$i + "px"};
+  }
+  .mb-#{$i} {
+    margin-bottom: #{$i + "px"};
+  }
+  .mt-#{$i} {
+    margin-top: #{$i + "px"};
+  }
+  .m-#{$i} {
+    margin: #{$i + "px"};
+  }
+}

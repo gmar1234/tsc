@@ -1,0 +1,60 @@
+.gm-accordion {
+  display: flex;
+  input {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+    &:checked {
+      + .tab__label {
+        border-bottom: 1px solid $color-border;
+        &::after {
+          transform: rotate(90deg);
+        }
+      }
+      ~ .tab__content {
+        max-height: 100vh;
+        padding: 1em;
+        font-size: 15px;
+      }
+    }
+  }
+  &__tabs {
+    overflow: hidden;
+    width: 100%;
+    .tab {
+      width: 100%;
+      color: white;
+      overflow: hidden;
+      &__label {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 0;
+        background: white;
+        font-weight: 100;
+        cursor: pointer;
+        color: $color-text-dark;
+        border-bottom: 1px solid $color-border;
+        font-size: 15px;
+        &::after {
+          content: "\276F";
+          width: 1em;
+          height: 1em;
+          text-align: center;
+          transition: all 0.35s;
+          color: $color-primary;
+        }
+      }
+      &__content {
+        max-height: 0;
+        padding: 0 1em;
+        color: $color-text-dark;
+        background: white;
+        transition: all 0.35s;
+      }
+
+      &:first-child {
+        border-top: 1px solid $color-border;
+      }
+    }
+  }
+}

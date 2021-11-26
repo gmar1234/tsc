@@ -1,0 +1,28 @@
+.gm-end {
+  width: 60%;
+  margin: 0 auto;
+  border-top: 1px solid $color-border;
+  padding-top: 20px;
+  h1 {
+    font-size: rem(50px);
+    color: $color-text-dark;
+    font-weight: 100;
+    margin-bottom: 20px;
+    span {
+      color: $color-primary;
+    }
+  }
+  p {
+    font-size: rem(20px);
+    color: $color-text-dark;
+    font-weight: 100;
+    margin-bottom: 20px;
+    span {
+      font-weight: bold;
+    }
+  }
+
+  &__buttons {
+    margin-top: 40px;
+  }
+}

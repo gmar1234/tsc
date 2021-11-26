@@ -23,3 +23,19 @@
     }
   }
 }
+
+@mixin props-input-label {
+  transition: all 0.2s;
+  touch-action: manipulation;
+}
+
+@mixin props-input-select {
+  background: #ffffff;
+  color: #494f66;
+  height: 56px;
+  border-radius: 4.02778px;
+  border: 1.00694px solid $color-border;
+  padding: 16px;
+  font-size: 16px;
+  line-height: 24px;
+}
