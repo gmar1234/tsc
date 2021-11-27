@@ -1,6 +1,6 @@
 import React from "react";
 import { AiFillHeart } from "react-icons/ai";
-import { IListPlanProps } from "../../interfaces/IListPlan";
+import { IListPlanProps } from "../../../infrastructure/interfaces/IListPlan"; 
 
 export const ListPlanAcomponent: React.FC<IListPlanProps> = ({
   type,

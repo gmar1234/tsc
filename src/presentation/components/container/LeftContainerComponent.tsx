@@ -5,7 +5,7 @@ import {
   MdOutlineLocalHospital,
 } from "react-icons/md";
 import Smoke from "../../assets/img/smoke.png";
-
+ 
 export const LeftContainerComponent = () => {
   return (
     <div className="gm-container__left">

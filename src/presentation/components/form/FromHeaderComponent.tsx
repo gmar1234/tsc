@@ -1,7 +1,7 @@
 import React from "react";
 
-import { IFormHeaderProps } from "../../interfaces/IForm";
-
+import { IFormHeaderProps } from "../../../infrastructure/interfaces/IForm";
+ 
 export const FromHeaderComponent: React.FC<IFormHeaderProps> = ({
   title,
   span,
@@ -13,6 +13,7 @@ export const FromHeaderComponent: React.FC<IFormHeaderProps> = ({
         {title} <span>{span}</span>
       </h2>
       <p className="paragraph">{paragraph}</p>
-    </div>
+    </div> 
   );
 };
+  

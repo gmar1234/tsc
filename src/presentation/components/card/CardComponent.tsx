@@ -1,6 +1,6 @@
 import React from "react";
 import { BsCheck } from "react-icons/bs";
-import { ICardProps } from "../../interfaces/ICard";
+import { ICardProps } from "../../../infrastructure/interfaces/ICard";
 
 export const CardComponent: React.FC<ICardProps> = ({
   name,

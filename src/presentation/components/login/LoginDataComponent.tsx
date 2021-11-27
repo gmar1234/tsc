@@ -1,4 +1,4 @@
-import PoliticsComponent from "../../components/PoliticsComponent";
+import PoliticsComponent from "../PoliticsComponent";
 
 export const LoginDataComponent = () => {
   return (

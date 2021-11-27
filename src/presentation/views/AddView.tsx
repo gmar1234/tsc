@@ -1,9 +1,22 @@
-import React from "react";
+import  { useEffect } from "react";
+import {useDispatch, useSelector} from "react-redux";
+import {RootStore} from "../../application/Store";
+import {GetPerson} from "../../application/action/person/PersonActions";
 
 import { LeftContainerComponent } from "../components/container/LeftContainerComponent";
 import { FormTopComponent } from "../components/form/FormTopComponent";
 import { FromHeaderComponent } from "../components/form/FromHeaderComponent";
+
 export const AddView = () => {
+  const dispatch = useDispatch();
+  const personState = useSelector((state: RootStore) => state.pokemon);
+
+
+  useEffect(() => {
+    console.log("pokemon state:", personState);
+    dispatch(GetPerson())
+  }, [dispatch])
+ 
   return (
     <div className="gm-container gm-container--two gm-add">
       <LeftContainerComponent />
@@ -80,11 +93,11 @@ export const AddView = () => {
             <p>
               <input type="radio" id="test2" name="radio-group" />
               <label htmlFor="test2">Femenino</label>
-            </p>
+            </p> 
           </div>
-
+ 
           <div className="gm-radio">
-            <h2 className="gm-radio__title">¿A quién vamos a asegurar?</h2>
+            <h2 className="gm-radio__title">¿A quién vamos a asegurar?</h2> 
             <p>
               <input type="radio" id="test1" name="radio-group" checked />
               <label htmlFor="test1">Solo a mí</label>
