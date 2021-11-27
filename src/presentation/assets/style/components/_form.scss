@@ -1,8 +1,14 @@
 .form {
   display: grid;
   grid-gap: 8px;
-  width: 50%;
   margin: 0 auto;
+
+  @for $i from 1 through 10 {
+    &--#{$i*10} {
+      width: #{$i * 10 + "%"};
+    }
+  }
+
   &__top {
     font-size: rem(13px);
     display: flex;

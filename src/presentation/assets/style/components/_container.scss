@@ -8,11 +8,94 @@
     grid-template-columns: 1fr 1fr;
   }
 
+  &--banner {
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    @include respond(phone) {
+      background-image: none;
+      background-color: #f7f8fc;
+    }
+    &--full {
+      @include respond(phone) {
+        display: none;
+      }
+    }
+
+    &--phone {
+      display: none;
+      position: absolute;
+      right: 0;
+      bottom: -20px;
+      @include respond(phone) {
+        display: block;
+      }
+    }
+  }
+
   &__left {
     opacity: 0;
     animation: 1.3s 0.2s ease fadeInLeft;
     animation-fill-mode: forwards;
     transform: translateX(100%);
+
+    &--title {
+      line-height: 60px;
+      letter-spacing: -0.2px;
+      font-size: rem(50px);
+      color: $color-white !important;
+      font-weight: 100;
+      margin-bottom: 30px;
+      span {
+        color: $color-white !important;
+      }
+      @include respond(phone) {
+        font-size: 20px;
+        line-height: 36px;
+        letter-spacing: -0.6px;
+        font-weight: 500;
+      }
+    }
+
+    &--text {
+      position: absolute;
+      top: 30%;
+      left: 30%;
+      transform: translate(-50%, -30%);
+    }
+
+    &--smoke {
+      position: absolute;
+      top: 30%;
+      right: 0;
+      transform: translate(30%, -30%);
+    }
+
+    &--list {
+      ul {
+        list-style: none;
+        li {
+          color: white;
+          font-size: rem(15px);
+          &:nth-child(n + 1) {
+            margin-bottom: 10px;
+          }
+          svg {
+            color: white;
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+
+    &--footer {
+      position: absolute;
+      bottom: 30%;
+      left: 20%;
+      transform: translate(-50%, -30%);
+      color: white !important;
+    }
+
     @include respond(phone) {
       display: none;
     }

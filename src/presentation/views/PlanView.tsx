@@ -10,6 +10,7 @@ import {
   AcordeonComponent,
   AcordeonItem,
 } from "../components/accordeon/AcordeonComponent";
+import { ButtonComponent } from "../components/button/ButtonComponent";
 
 const CardData = [
   {
@@ -83,78 +84,75 @@ const ListData = [
 
 export const PlanView = () => {
   return (
-    <div className="gm-container gm-container--two gm-add">
-      <LeftContainerComponent />
-      <div className="gm-container__rigth">
-        <form className="form">
-          <FormTopComponent />
-          <FromHeaderComponent
-            title="Elige"
-            span="tu protección"
-            paragraph="selecciona tu plan de salud ideal."
+    <form className="form form--70">
+      <FormTopComponent />
+      <FromHeaderComponent
+        title="Elige"
+        span="tu protección"
+        paragraph="selecciona tu plan de salud ideal."
+      />
+      <div className="gm-card-small mb-30">
+        {CardData.map((card, index) => (
+          <CardComponent
+            key={index}
+            name={card.name}
+            price={card.price}
+            type={card.type}
+            classp="gm-card-small"
           />
-          <div className="gm-card-small mb-30">
-            {CardData.map((card, index) => (
-              <CardComponent
-                key={index}
-                name={card.name}
-                price={card.price}
-                type={card.type}
-                classp="gm-card-small"
-              />
-            ))}
-          </div>
+        ))}
+      </div>
 
-          <div className="gm-card-big">
-            <div className="gm-card-big__header">
-              <p>Cuentas con estos beneficios</p>
-            </div>
-            <div className="gm-card-big__body">
-              <CardBigComponent />
-              <div className="list">
-                <ul>
-                  {ListData.map((list, index) => (
-                    <ListPlanAcomponent
-                      key={index}
-                      type={list.type}
-                      span={list.span}
-                      text={list.text}
-                    />
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div className="gm-services">
-            <div className="gm-services__title">
-              <h2>Revisa nuestros</h2>
-              <p>servicios y exclusiones</p>
-            </div>
-
-            <AcordeonComponent>
-              {AccoredeonData.map((acordeon, index) => (
-                <AcordeonItem
+      <div className="gm-card-big">
+        <div className="gm-card-big__header">
+          <p>Cuentas con estos beneficios</p>
+        </div>
+        <div className="gm-card-big__body">
+          <CardBigComponent />
+          <div className="list">
+            <ul>
+              {ListData.map((list, index) => (
+                <ListPlanAcomponent
                   key={index}
-                  title={acordeon.title}
-                  content={acordeon.content}
-                  primary={acordeon.primary}
-                  classp="tab"
+                  type={list.type}
+                  span={list.span}
+                  text={list.text}
                 />
               ))}
-            </AcordeonComponent>
+            </ul>
           </div>
-
-          <div className="form__buttom between-elemet-all">
-            <a href="!#" className="button button--simple">
-              enviar cotización por correo
-            </a>
-            <button className="button button--primary" type="submit">
-              comprar plan
-            </button>
-          </div>
-        </form>
+        </div>
       </div>
-    </div>
+
+      <div className="gm-services">
+        <div className="gm-services__title">
+          <h2>Revisa nuestros</h2>
+          <p>servicios y exclusiones</p>
+        </div>
+
+        <AcordeonComponent>
+          {AccoredeonData.map((acordeon, index) => (
+            <AcordeonItem
+              key={index}
+              title={acordeon.title}
+              content={acordeon.content}
+              primary={acordeon.primary}
+              classp="tab"
+            />
+          ))}
+        </AcordeonComponent>
+      </div>
+
+      <div className="form__buttom between-elemet-all">
+        <a href="!#" className="button button--simple">
+          enviar cotización por correo
+        </a>
+        <ButtonComponent
+          value="comprar plan"
+          processing={false}
+          type="primary"
+        />
+      </div>
+    </form>
   );
 };

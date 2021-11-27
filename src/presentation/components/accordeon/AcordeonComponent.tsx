@@ -1,6 +1,8 @@
 import React from "react";
-import { IAccordeonProps } from "../../../infrastructure/interfaces/IAccordeon";
-import { IAccordeonContainerProps } from "../../../infrastructure/interfaces/IAccordeon";
+import {
+  IAccordeonContainerProps,
+  IAccordeonProps,
+} from "../../../infrastructure/interfaces/IAccordeon";
 
 export const AcordeonItem: React.FC<IAccordeonProps> = ({
   primary,

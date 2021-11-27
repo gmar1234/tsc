@@ -5,17 +5,17 @@ import {
   MdOutlineLocalHospital,
 } from "react-icons/md";
 import Smoke from "../../assets/img/smoke.png";
- 
+
 export const LeftContainerComponent = () => {
   return (
     <div className="gm-container__left">
       <div className="clip-path"></div>
-      <div className="login__text">
-        <h2 className="login__title ">
+      <div className="gm-container__left--text">
+        <h2 className="gm-container__left--title ">
           Seguro de <br />
           <span className="font-bold">Salud</span>
         </h2>
-        <div className="login__list">
+        <div className="gm-container__left--list">
           <ul>
             <li>
               <MdSecurity /> Cómpralo de manera facil y rápida
@@ -33,8 +33,12 @@ export const LeftContainerComponent = () => {
           </ul>
         </div>
       </div>
-      <p className="login__footer">&copy; 2021 RIMAC y Company</p>
-      <img src={Smoke} className="login__smoke" alt="Smoke Cotización" />
+      <p className="gm-container__left--footer">&copy; 2021 RIMAC y Company</p>
+      <img
+        src={Smoke}
+        className="gm-container__left--smoke"
+        alt="Smoke Cotización"
+      />
     </div>
   );
 };
