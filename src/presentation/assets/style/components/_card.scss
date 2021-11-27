@@ -34,6 +34,7 @@
   }
   &__title {
     font-size: rem(10px);
+    font-weight: bold;
     color: $color-text-dark;
     text-transform: uppercase;
     margin-bottom: 10px;
@@ -43,6 +44,7 @@
     color: $color-text-dark;
     display: flex;
     font-size: rem(15px);
+    font-weight: bold;
     text-transform: uppercase;
     margin-bottom: 5px;
     span {
@@ -53,6 +55,7 @@
 
   &__type {
     font-size: rem(12px);
+    font-weight: 600;
     text-transform: lowercase;
   }
 }
@@ -70,6 +73,7 @@
     padding: 10px;
     p {
       font-size: rem(15px);
+      font-weight: 600;
     }
   }
 
@@ -105,6 +109,7 @@
         list-style: none;
         li {
           color: $color-text-dark;
+          font-weight: 500;
           &:nth-child(n + 1) {
             margin-bottom: 15px;
           }
@@ -116,7 +121,7 @@
       }
       &__primary {
         font-size: rem(18px);
-        font-weight: bold;
+        font-weight: bold !important;
         span {
           font-size: rem(12px);
           color: $color-text-ligth;

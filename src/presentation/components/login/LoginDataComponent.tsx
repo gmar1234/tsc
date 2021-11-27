@@ -15,7 +15,7 @@ export const LoginDataComponent = () => {
         <FromHeaderComponent
           title="Obtén tu"
           span="seguro ahora"
-          paragraph="Ingresa los datos para comenzar"
+          paragraph="Ingresa los datos para comenzar."
         />
         <div className="form__group">
           <select className="input" name="document">
@@ -42,6 +42,8 @@ export const LoginDataComponent = () => {
           value={nameInput}
           label="Celular"
         />
+
+        <br />
 
         <PoliticsComponent text="Politica de Protección de Datos Personales y los Términos y Condiciones." />
         <PoliticsComponent text="Politica de Envio de Comunicaciones Comerciales." />

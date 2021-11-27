@@ -30,7 +30,7 @@
         justify-content: space-between;
         padding: 20px 0;
         background: white;
-        font-weight: 100;
+        font-weight: 600;
         cursor: pointer;
         color: $color-text-dark;
         border-bottom: 1px solid $color-border;
@@ -50,6 +50,7 @@
         color: $color-text-dark;
         background: white;
         transition: all 0.35s;
+        font-weight: 600;
       }
 
       &:first-child {

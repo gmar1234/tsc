@@ -6,6 +6,7 @@
     @include props-input-label;
     letter-spacing: 0.05em;
     color: $color-text-ligth;
+    font-weight: 600;
   }
 
   input:placeholder-shown + label {

@@ -1,2 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+p,
+a,
+h1,
+h2,
+h3,
+span,
+label,
+a,
+div,
+li,
+option,
+button {
+  font-family: "Roboto", sans-serif;
+}

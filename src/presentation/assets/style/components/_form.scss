@@ -10,10 +10,12 @@
   }
 
   &__top {
-    font-size: rem(13px);
-    display: flex;
     align-items: center;
+    display: flex;
+    font-size: rem(13px);
+    font-weight: 600;
     margin-bottom: 20px;
+
     span,
     svg {
       color: $color-primary;
@@ -28,18 +30,21 @@
       margin-bottom: 15px;
       span {
         color: $color-primary;
+        font-weight: bold;
       }
     }
     .paragraph {
-      font-size: rem(17px);
-      font-weight: 100;
+      font-size: rem(15px);
+      font-weight: 600;
     }
   }
 
   &__call {
     margin-top: 40px;
     margin-bottom: -12px;
-    font-size: rem(14px);
+    font-size: rem(16px);
+    font-weight: 600;
+    color: $color-text-dark;
   }
   &__group {
     display: flex;

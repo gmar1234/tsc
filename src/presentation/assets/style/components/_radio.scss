@@ -1,13 +1,14 @@
 .gm-radio {
   &__title {
     font-size: rem(13px);
-    font-weight: 100;
     color: $color-text-dark;
+    font-weight: 600;
     margin-bottom: 10px;
   }
   p {
-    margin-bottom: 10px;
     font-size: rem(13px);
+    font-weight: 600;
+    margin-bottom: 10px;
   }
   [type="radio"] {
     &:checked,

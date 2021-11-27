@@ -9,7 +9,13 @@
 
   &__text {
     font-size: rem(13px);
+    font-weight: 600;
+    color: $color-text-dark !important;
     line-height: 1.5;
+    color: $color-text-ligth !important;
+    a {
+      font-weight: bold;
+    }
   }
 
   input {

@@ -4,7 +4,7 @@ export const EndView = () => {
   return (
     <div className="gm-end">
       <h1>
-        ¡Gracias por
+        ¡Gracias por{" "}
         <span>
           confiar en <br /> nosotros!
         </span>
