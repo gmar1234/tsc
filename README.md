@@ -7,7 +7,7 @@
 - Web
 
 ```
-    https://elated-agnesi-da604a.netlify.app/
+    https://sleepy-leakey-4583ae.netlify.app/
 ```
 
 # Instalacion
