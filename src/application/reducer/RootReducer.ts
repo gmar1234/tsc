@@ -2,7 +2,7 @@ import { combineReducers } from "redux";
 import personReducer from "./PersonReducer";
 
 const RootReducer = combineReducers({
-  pokemon: personReducer,
+  person: personReducer,
 });
 
 export default RootReducer;

@@ -6,6 +6,9 @@
 
   &--two {
     grid-template-columns: 1fr 1fr;
+    @include respond(tab-port) {
+      grid-template-columns: 1fr !important;
+    }
   }
 
   &--banner {
@@ -96,7 +99,7 @@
       color: white !important;
     }
 
-    @include respond(phone) {
+    @include respond(tab-port) {
       display: none;
     }
   }
@@ -108,10 +111,11 @@
     transform: translateX(100%);
     position: relative;
     overflow-y: auto;
-    padding: rem(100px) 0;
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
+    padding: 100px 0;
+
+    @include respond(tab-port) {
+      padding: 50px 0;
+    }
   }
 
   @include respond(tab-land) {

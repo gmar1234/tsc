@@ -27,6 +27,7 @@
 @mixin props-input-label {
   transition: all 0.2s;
   touch-action: manipulation;
+  font-weight: 600;
 }
 
 @mixin props-input-select {
@@ -38,4 +39,5 @@
   padding: 16px;
   font-size: 16px;
   line-height: 24px;
+  font-weight: 600;
 }

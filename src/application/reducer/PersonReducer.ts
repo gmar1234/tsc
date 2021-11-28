@@ -8,7 +8,7 @@ import {
 
 interface DefaultStateI {
   loading: boolean;
-  pokemon?: PersonType;
+  person?: PersonType;
 }
 
 const defaultState: DefaultStateI = {
@@ -31,7 +31,7 @@ const personReducer = (
     case SUCCESS_PERSON:
       return {
         loading: false,
-        pokemon: action.payload,
+        person: action.payload,
       };
     default:
       return state;

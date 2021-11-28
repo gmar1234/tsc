@@ -1,9 +1,4 @@
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  NavLink,
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import { LeftContainerComponent } from "./presentation/components/container/LeftContainerComponent";
 import { AddView } from "./presentation/views/AddView";

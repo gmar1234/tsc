@@ -15,11 +15,9 @@ export const GetPerson =
     await PersonDataService.get()
       .then((response) => {
         const rsp = response.data;
-        console.log("DENBTRO DEL DISPACHT");
-        console.log(rsp);
         dispatch({
           type: SUCCESS_PERSON,
-          payload: rsp,
+          payload: rsp.data,
         });
       })
       .catch((err) => {
@@ -28,22 +26,4 @@ export const GetPerson =
           type: FAIL_PERSON,
         });
       });
-
-    //   try {
-    //     dispatch({
-    //       type: LOADING_PERSON
-    //     })
-
-    //     const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
-
-    //     dispatch({
-    //       type: SUCCESS_PERSON,
-    //       payload: res.data.data
-    //     })
-
-    //   } catch(e) {
-    //     dispatch({
-    //       type: FAIL_PERSON
-    //     })
-    //   }
   };

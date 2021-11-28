@@ -7,9 +7,14 @@ export const CardComponent: React.FC<ICardProps> = ({
   price,
   type,
   classp,
+  onClick,
+  active,
 }) => {
   return (
-    <div className={classp + `__item`}>
+    <div
+      className={classp + `__item ${name === active ? "active" : null}`}
+      onClick={() => onClick(name)}
+    >
       <div className={classp + `__circle`}>
         <BsCheck />
       </div>

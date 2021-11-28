@@ -1,9 +1,16 @@
-export const GET_PERSON = "GET_PERSON"
+export const GET_PERSON = "GET_PERSON";
 export const LOADING_PERSON = "LOADING_PERSON";
 export const FAIL_PERSON = "FAIL_PERSON";
 export const SUCCESS_PERSON = "SUCCESS_PERSON";
 
-export type PersonType = {
+export interface PersonType {
+  tercero: IPersonThird;
+  mensajeResp?: string;
+  error?: IPersonError;
+  codigoResp?: string;
+}
+
+export type IPersonThird = {
   direccion: string;
   nomCompleto: string;
   indCrearTercero: string;
@@ -21,39 +28,24 @@ export type PersonType = {
   numDocumento: string;
   fecNacimiento: string;
   correo: string;
-  // sprites: PokemonSprites,
-  // stats: PokemonStat[]
-}
+};
 
-// export type PokemonAbility = {
-//   ability: {
-//     name: string
-//     url: string
-//   }
-// }
-
-// export type PokemonSprites = {
-//   front_default: string
-// }
-
-// export type PokemonStat = {
-//   base_stat: number,
-//   stat: {
-//     name: string
-//   }
-// }
+export type IPersonError = {
+  codigo: string;
+  mensajeux: string;
+};
 
 export interface PersonLoading {
-  type: typeof LOADING_PERSON
+  type: typeof LOADING_PERSON;
 }
 
 export interface PersonFail {
-  type: typeof FAIL_PERSON
+  type: typeof FAIL_PERSON;
 }
 
 export interface PersonSuccess {
-  type: typeof SUCCESS_PERSON,
-  payload: PersonType
+  type: typeof SUCCESS_PERSON;
+  payload: PersonType;
 }
 
-export type PersonDispatchTypes = PersonLoading | PersonFail |  PersonSuccess
+export type PersonDispatchTypes = PersonLoading | PersonFail | PersonSuccess;

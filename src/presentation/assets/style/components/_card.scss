@@ -1,6 +1,6 @@
 .gm-card-small {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
   grid-gap: 10px;
 
   &__item {
@@ -14,6 +14,12 @@
       border: 1px solid $color-green;
       .gm-card-small__circle {
         background-color: $color-green;
+      }
+    }
+    &.active {
+      border: 1px solid $color-green !important;
+      .gm-card-small__circle {
+        background-color: $color-green !important;
       }
     }
   }

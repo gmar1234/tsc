@@ -1,14 +1,4 @@
-export default interface IPersonData {
-  data: IPersonFinally;
-}
-
-export type IPersonFinally = {
-  tercero: IPersonThird;
-  mensajeResp: string;
-  error: IPersonError;
-  codigoResp: string;
-};
-export type IPersonThird = {
+export interface IPersonDataProps {
   direccion: string;
   nomCompleto: string;
   indCrearTercero: string;
@@ -26,9 +16,4 @@ export type IPersonThird = {
   numDocumento: string;
   fecNacimiento: string;
   correo: string;
-};
-
-export type IPersonError = {
-  codigo: string;
-  mensajeux: string;
-};
+}

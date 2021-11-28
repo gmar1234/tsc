@@ -3,6 +3,9 @@
   cursor: pointer;
   text-transform: uppercase;
   font-weight: 600;
+  padding: 20px;
+  text-decoration: none;
+  text-align: center;
   &--primary {
     background: $color-primary;
     border: none;
@@ -13,6 +16,18 @@
     transition: $transition;
     &:hover {
       background: darken($color-primary, 5%);
+    }
+  }
+  &--disabled {
+    background: $color-border;
+    border: none;
+    border-radius: 8px;
+    color: #ffffff;
+    height: 56px;
+    width: 192px;
+    transition: $transition;
+    &:hover {
+      background: darken($color-border, 5%);
     }
   }
   &--simple {

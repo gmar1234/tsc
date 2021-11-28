@@ -1,9 +1,9 @@
 import HttpClient from "../HttpClient";
-import IPersonData from "../../types/person.types"
+import IPersonData from "../../types/person.types";
 
 class PersonDataService {
   get() {
-    return HttpClient.get<IPersonData>(`/obtenerdatospersona`);
+    return HttpClient.post<IPersonData>(`/obtenerdatospersona`);
   }
 }
 

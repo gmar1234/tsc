@@ -4,15 +4,23 @@ import { IInputProps } from "../../../infrastructure/interfaces/IInput";
 export const InputComponent: React.FC<IInputProps> = ({
   onChange,
   name,
-  value,
+  value = "",
   label,
+  maxValidation = 0,
+  type,
+  union = false,
 }) => {
   return (
-    <div className="gm-input">
+    <div
+      className={`gm-input ${
+        value.length < maxValidation ? "gm-input--error" : ""
+      }`}
+    >
       <input
-        onChange={(event) => onChange(event.target.value)}
+        type={type}
+        onChange={(event) => onChange(event)}
         placeholder={label}
-        className="gm-input__item"
+        className={`gm-input__item ${union ? "gm-input__union" : ""}`}
         value={value}
         id={`${name}_${label}`}
         name={name}

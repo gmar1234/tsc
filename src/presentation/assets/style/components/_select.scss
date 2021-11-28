@@ -1,0 +1,19 @@
+.gm-select {
+  height: 57px;
+  border-radius: 0 4px 4px 0;
+  border-radius: 4px 0 0 4px;
+  //   appearance: none;
+  padding: 2px 2px 2px 20px;
+  //   background: transparent url("../../img/chevrot.png") no-repeat right
+  //     center;
+  background-position: calc(100% - 10px) calc(1em + 8px),
+    calc(100% - 15px) calc(1em + 2px), 100% 0;
+
+  &.gm-select--error {
+    border-top: 1px solid $color-red !important;
+    border-left: 1px solid $color-red !important;
+    border-bottom: 1px solid $color-red !important;
+    border-right: 1px solid $color-red !important;
+    border-radius: 4px 0px 0px 4px !important;
+  }
+}

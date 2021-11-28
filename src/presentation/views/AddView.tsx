@@ -1,7 +1,15 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+
 import { RootStore } from "../../application/Store";
 import { GetPerson } from "../../application/action/person/PersonActions";
+
+import { IPersonDataProps } from "../../infrastructure/interfaces/IPersonData";
+import { changeFormatDate } from "../../infrastructure/utilities/UDate";
+import { dataTypeDocument } from "../../infrastructure/utilities/UDataFake";
+import { initialPersonState } from "../../infrastructure/utilities/UInitialState";
+
+import { SelectComponent } from "../components/select/SelectComponent";
 import { FormTopComponent } from "../components/form/FormTopComponent";
 import { FromHeaderComponent } from "../components/form/FromHeaderComponent";
 import { InputComponent } from "../components/input/InputComponent";
@@ -14,81 +22,141 @@ import {
 
 export const AddView = () => {
   const dispatch = useDispatch();
-  const personState = useSelector((state: RootStore) => state.pokemon);
-  const [nameInput, setNameInput] = useState("");
+  const personState = useSelector((state: RootStore) => state.person);
+  const [personData, setPersonData] =
+    useState<IPersonDataProps>(initialPersonState);
 
-  const onChange = (str: string) => {
-    setNameInput(str);
+  const {
+    nomCompleto,
+    apellidoPaterno,
+    nombres,
+    tipoDocumento,
+    apellidoMaterno,
+    numDocumento,
+    fecNacimiento,
+  } = personData;
+
+  const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.target;
+    setPersonData({
+      ...personData,
+      [name]: value,
+    });
   };
 
   useEffect(() => {
-    console.log("pokemon state:", personState);
+    if (personState?.tercero) {
+      setPersonData({
+        ...personState.tercero,
+        fecNacimiento: changeFormatDate(personState.tercero.fecNacimiento),
+      });
+    }
+  }, [personState]);
+
+  useEffect(() => {
     dispatch(GetPerson());
   }, [dispatch]);
 
   return (
     <form className="form form--50">
-      <FormTopComponent />
+      <FormTopComponent link="" step={1} />
       <FromHeaderComponent
         title="Hola"
-        span="Pepito"
+        span={nombres}
         paragraph="valida que los datos sean correctos"
       />
       <div className="form__call">Datos personales del titular</div>
       <div className="form__group">
-        <select className="input" name="document">
-          <option value="DNI">DNI</option>
-        </select>
-        <InputComponent
+        <SelectComponent
           onChange={onChange}
-          name="add_document"
-          value={nameInput}
+          items={dataTypeDocument}
+          name="tipoDocumento"
+          value={tipoDocumento}
+        />
+        <InputComponent
+          type="text"
+          onChange={onChange}
+          name="numDocumento"
+          value={numDocumento}
           label="N° de Documento"
+          union={true}
         />
       </div>
 
       <InputComponent
+        type="text"
         onChange={onChange}
-        name="add_name"
-        value={nameInput}
+        name="nomCompleto"
+        value={nomCompleto}
         label="Nombres"
       />
 
       <InputComponent
+        type="text"
         onChange={onChange}
-        name="add_last_name_one"
-        value={nameInput}
+        name="apellidoPaterno"
+        value={apellidoPaterno}
         label="Apellido Paterno"
       />
 
       <InputComponent
+        type="text"
         onChange={onChange}
-        name="add_last_name_two"
-        value={nameInput}
+        name="apellidoMaterno"
+        value={apellidoMaterno}
         label="Apellido Materno"
       />
 
       <InputComponent
+        type="date"
         onChange={onChange}
-        name="add_birth"
-        value={nameInput}
+        name="fecNacimiento"
+        value={fecNacimiento.replace("/", "-")}
         label="Fecha de nacimiento"
       />
 
       <RadioComponent>
         <RadioTitle title="Género" />
-        <RadioItem name="genero" value="Masculino" key="masc" />
-        <RadioItem name="genero" value="Femenino" key="feme" />
+        <RadioItem
+          name="sexo"
+          primary="M"
+          text="Masculino"
+          keyValue="masc"
+          onChange={onChange}
+        />
+        <RadioItem
+          name="sexo"
+          primary="F"
+          text="Femenino"
+          keyValue="feme"
+          onChange={onChange}
+        />
       </RadioComponent>
 
       <RadioComponent>
         <RadioTitle title="¿A quién vamos a asegurar?" />
-        <RadioItem name="asegurar" value="Solo a mí" key="soloa" />
-        <RadioItem name="asegurar" value="A mi y mi familia" key="ami" />
+        <RadioItem
+          name="asegurar"
+          text="Solo a mí"
+          keyValue="soloa"
+          onChange={onChange}
+        />
+        <RadioItem
+          name="asegurar"
+          text="A mi y mi familia"
+          keyValue="ami"
+          onChange={onChange}
+        />
       </RadioComponent>
 
-      <div className="form__buttom">
-        <ButtonComponent value="continuar" processing={false} type="primary" />
+      <div className="form__buttom end-element-all">
+        <ButtonComponent
+          value="continuar"
+          processing={false}
+          type="primary"
+          link="plan"
+          validate={true}
+        />
       </div>
     </form>
   );

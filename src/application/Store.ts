@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware } from "redux";
-import RootReducer from "./reducer/PersonReducer";
-import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
+import { composeWithDevTools } from "redux-devtools-extension";
+import RootReducer from "./reducer/PersonReducer";
 
 const midleware = [thunk];
 

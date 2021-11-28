@@ -3,3 +3,8 @@ export interface IFormHeaderProps {
   span: string;
   paragraph?: string;
 }
+
+export interface IFormTopProps {
+  step?: number;
+  link: string;
+}

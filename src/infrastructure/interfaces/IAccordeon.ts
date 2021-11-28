@@ -1,4 +1,5 @@
 import { ReactElement } from "react";
+
 export interface IAccordeonProps {
   title: string;
   content: string;

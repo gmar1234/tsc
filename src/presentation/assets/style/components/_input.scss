@@ -2,11 +2,36 @@
   display: flex;
   flex-flow: column-reverse;
   flex: 1;
+
+  .gm-input__union {
+    border-top: 1px solid $color-border !important;
+    border-right: 1px solid $color-border !important;
+    border-bottom: 1px solid $color-border !important;
+    border-left: none !important;
+    border-radius: 0px 4px 4px 0px !important;
+  }
+
+  &--error {
+    input {
+      border: 1px solid $color-red !important;
+      color: $color-red !important;
+    }
+    label {
+      color: $color-red !important;
+    }
+
+    .gm-input__union {
+      border-top: 1px solid $color-red !important;
+      border-right: 1px solid $color-red !important;
+      border-bottom: 1px solid $color-red !important;
+      border-left: none !important;
+      border-radius: 0px 4px 4px 0px !important;
+    }
+  }
   label {
     @include props-input-label;
     letter-spacing: 0.05em;
     color: $color-text-ligth;
-    font-weight: 600;
   }
 
   input:placeholder-shown + label {
@@ -49,5 +74,5 @@
 select {
   @include props-input-select;
   font-weight: normal;
-  margin-top: 13px;
+  margin-top: 12px;
 }

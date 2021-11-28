@@ -1,9 +1,11 @@
 import { ReactElement } from "react";
 
 export interface IRadioProps {
+  onChange: (arg0: any) => void;
   name: string;
-  value: string;
-  key: string;
+  text: string;
+  primary?: string;
+  keyValue: string;
 }
 
 export interface IRadioTitleProps {

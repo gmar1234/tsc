@@ -15,7 +15,13 @@ export const EndView = () => {
         <span>48 horas</span>
       </p>
       <div className="gm-end__buttons end-element-all">
-        <ButtonComponent value="ir a salud" processing={false} type="primary" />
+        <ButtonComponent
+          value="ir a salud"
+          processing={false}
+          type="primary"
+          link="404"
+          validate={true}
+        />
       </div>
     </div>
   );

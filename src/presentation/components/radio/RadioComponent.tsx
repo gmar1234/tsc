@@ -1,15 +1,30 @@
 import React from "react";
+
 import {
   IRadioContainerProps,
   IRadioProps,
   IRadioTitleProps,
 } from "../../../infrastructure/interfaces/IRadio";
 
-export const RadioItem: React.FC<IRadioProps> = ({ name, value, key }) => {
+export const RadioItem: React.FC<IRadioProps> = ({
+  name,
+  // value,
+  keyValue,
+  primary,
+  onChange,
+  text,
+}) => {
   return (
     <p>
-      <input type="radio" id={`${key}_${name}`} name={name} checked />
-      <label htmlFor={`${key}_${name}`}>{value}</label>
+      <input
+        type="radio"
+        id={`${keyValue}_${name}`}
+        name={name}
+        value={primary}
+        onChange={(event) => onChange(event)}
+        checked
+      />
+      <label htmlFor={`${keyValue}_${name}`}>{text}</label>
     </p>
   );
 };
