@@ -1,6 +1,6 @@
 # Cotizador de seguros
 
-- clean architecture(Front), Metodologia BEM , react
+- clean architecture(Front), Metodologia BEM , React, Typescript
 
 # Web Ejemplo
 
@@ -49,7 +49,7 @@ src
 
 ```
 
-# Technologies
+# Tecnologias
 
 - React - Router
 - Redux - thunk
